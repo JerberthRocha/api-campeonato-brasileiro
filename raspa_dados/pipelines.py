@@ -17,16 +17,28 @@ class RaspaDadosPipeline:
         #Cria o cursor usado para executar comandos no DB
         self.cursor = self.conexao.cursor()
 
-    #CLUBES SERIE A E B
     def process_item(self, item, spider):
+    #INSERE CLUBES SERIE A E B
+    #     self.cursor.execute("""
+    #         INSERT INTO jogadores_time (nome, divisao_id) VALUES (?, ?)
+    #     """,
+    #     (
+    #         item['nome'],
+    #         item['divisao_id']
+    #     ))
+
+
+    # INSERE JOGADORES
         self.cursor.execute("""
-            INSERT INTO jogadores_time (nome, divisao_id) VALUES (?, ?)
+            INSERT INTO jogadores_jogador (nome, foto, time_id) VALUES (?, ?, ?)
         """,
         (
             item['nome'],
-            item['divisao_id']
+            item['foto'],
+            item['time_id']
         ))
 
         ## Execute o comando de inserção no DB
         self.conexao.commit()
+
         return item
