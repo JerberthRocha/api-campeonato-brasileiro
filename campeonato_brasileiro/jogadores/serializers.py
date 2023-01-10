@@ -15,8 +15,15 @@ class CampeonatoSerializer(serializers.ModelSerializer):
 
 
 class TimeSerializer(serializers.ModelSerializer):
+    # divisao = CampeonatoSerializer()
     class Meta:
         model = Time
-        exclude = []
+        fields = ['nome']
 
-    divisao = CampeonatoSerializer()
+
+
+class ElencoSerializer(serializers.HyperlinkedModelSerializer):
+    time = TimeSerializer()
+    class Meta:
+        model = Jogador
+        exclude = ['url']
