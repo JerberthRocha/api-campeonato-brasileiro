@@ -21,7 +21,7 @@ from jogadores.urls import router
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('campeonato-brasileiro/', include(router.urls)),
-    path('', include('jogadores.urls')),
+    path('campeonato-brasileiro/', include('jogadores.urls')),
     path('__debug__/', include('debug_toolbar.urls')),
     path('api/', include('rest_framework.urls'))
 ]
