@@ -3,6 +3,7 @@ from django.db import models
 
 class Campeonato(models.Model):
     nome = models.CharField(max_length=30)
+    slug = models.SlugField(null=True)
 
     def __str__(self) -> str:
         return self.nome
