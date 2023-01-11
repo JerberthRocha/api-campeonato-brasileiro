@@ -1,5 +1,5 @@
 from rest_framework.routers import DefaultRouter
-from .views import JogadorViewSet, TimeViewSet, ElencoViewSet, home
+from .views import JogadorViewSet, TimeViewSet, ElencoViewSet, DivisaoViewSet, home
 from django.urls import path
 
 router = DefaultRouter()
@@ -10,5 +10,7 @@ router.register('times', TimeViewSet),
 
 urlpatterns = [
     path('home', home),
-    path('elenco/<int:pk>', ElencoViewSet.as_view(), name='elenco'),
+    # path('elenco/<int:pk>', ElencoViewSet.as_view(), name='elenco'),
+    path('elenco/<str:time>', ElencoViewSet.as_view(), name='elenco'),
+    path('jogadores/<str:divisao>', DivisaoViewSet.as_view(), name='divisao'),
 ]
