@@ -3,7 +3,7 @@ from rest_framework.views import APIView
 from rest_framework.decorators import permission_classes
 from rest_framework import permissions
 from .models import Time, Jogador
-from .serializers import JogadorSerializer, TimeSerializer, ElencoSerializer
+from .serializers import JogadorSerializer, TimeSerializer, ElencoSerializer, DivisaoSerializer
 from django.shortcuts import render
 from rest_framework.response import Response
 from django.utils.text import slugify
@@ -16,14 +16,14 @@ class TimeViewSet(viewsets.ModelViewSet):
 
 
 class JogadorViewSet(viewsets.ModelViewSet):
-    """Mostra todos os jogadores do Campeonato Brasileiro séries A e B."""
+    """Mostra todos os jogadores que participam do Campeonato Brasileiro séries A e B."""
     queryset = Jogador.objects.all().select_related('time')
     serializer_class = JogadorSerializer
 
 
 @permission_classes((permissions.IsAuthenticatedOrReadOnly,))
 class ElencoViewSet(APIView):
-    """Mostra o elenco completo de cada equipe do Campeonato Brasileiro séries A e B."""
+    """Mostra o elenco completo da equipe informada por parâmetro."""
     def get(self, request, **kwargs):
         parametro = str(*kwargs.values())
         if parametro.isnumeric():
@@ -38,8 +38,13 @@ class ElencoViewSet(APIView):
 
 @permission_classes((permissions.IsAuthenticatedOrReadOnly,))
 class DivisaoViewSet(APIView):
+    """Mostra todos os atletas que jogam na divisão informada por parâmetro"""
     def get(self, request, **kwargs):
-        ...
+        parametro = slugify(str(*kwargs.values()))
+        divisao = Jogador.objects.filter(time__divisao__slug=parametro).select_related('time')
+
+        serializer = DivisaoSerializer(divisao, many=True)
+        return Response(serializer.data)
 
 
 def home(request):

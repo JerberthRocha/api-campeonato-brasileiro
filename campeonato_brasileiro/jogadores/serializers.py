@@ -25,4 +25,12 @@ class ElencoSerializer(serializers.ModelSerializer):
     # time = TimeSerializer()
     class Meta:
         model = Jogador
+        # fields = ['id', 'nome', 'foto', 'time']
         exclude = []
+
+
+class DivisaoSerializer(serializers.ModelSerializer):
+    time = TimeSerializer()
+    class Meta:
+        model = Jogador
+        fields = ['id', 'nome', 'foto', 'time']
