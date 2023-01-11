@@ -47,6 +47,17 @@ class DivisaoViewSet(APIView):
         return Response(serializer.data)
 
 
+@permission_classes((permissions.IsAuthenticatedOrReadOnly,))
+class TimeDivisaoViewSet(APIView):
+    """Mostra todos os atletas que jogam na divisão informada por parâmetro"""
+    def get(self, request, **kwargs):
+        parametro = slugify(str(*kwargs.values()))
+        print(parametro)
+        divisao = Time.objects.filter(divisao__slug=parametro).select_related('divisao')
+
+        serializer = TimeSerializer(divisao, many=True)
+        return Response(serializer.data)
+
+
 def home(request):
     return render(request, 'jogadores/pages/home.html')
-
