@@ -6,6 +6,7 @@ from .models import Time, Jogador
 from .serializers import JogadorSerializer, TimeSerializer, ElencoSerializer
 from django.shortcuts import render
 from rest_framework.response import Response
+from django.utils.text import slugify
     
 
 class TimeViewSet(viewsets.ModelViewSet):
@@ -26,12 +27,19 @@ class ElencoViewSet(APIView):
     def get(self, request, **kwargs):
         parametro = str(*kwargs.values())
         if parametro.isnumeric():
-            elenco = Jogador.objects.filter(time__id__icontains=parametro).select_related('time')
+            elenco = Jogador.objects.filter(time__id__exact=int(parametro)).select_related('time')
         else:
-            elenco = Jogador.objects.filter(time__nome__icontains=parametro).select_related('time')
+            parametro = slugify(parametro)
+            elenco = Jogador.objects.filter(time__slug__contains=parametro).select_related('time')
 
         serializer = ElencoSerializer(elenco, many=True)
         return Response(serializer.data)
+
+
+@permission_classes((permissions.IsAuthenticatedOrReadOnly,))
+class DivisaoViewSet(APIView):
+    def get(self, request, **kwargs):
+        ...
 
 
 def home(request):
