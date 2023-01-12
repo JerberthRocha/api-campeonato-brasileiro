@@ -18,16 +18,16 @@
 
     <body>
         <ul>
-            <li><a href="jogadores" target="_blank">jogadores</a></li>
-            <li><a href="jogadores/serie-a" target="_blank">jogadores/serie-a</a></li>
-            <li><a href="jogadores/serie-b" target="_blank">jogadores/serie-b</a></li>
-            <li><a href="times" target="_blank">times</a></li>
-            <li><a href="times/serie-a" target="_blank">times/serie-a</a></li>
-            <li><a href="times/serie-b" target="_blank">times/serie-b</a></li>
+            <li><a href="api/jogadores" target="_blank">jogadores</a></li>
+            <li><a href="api/jogadores/serie-a" target="_blank">jogadores/serie-a</a></li>
+            <li><a href="api/jogadores/serie-b" target="_blank">jogadores/serie-b</a></li>
+            <li><a href="api/times" target="_blank">times</a></li>
+            <li><a href="api/times/serie-a" target="_blank">times/serie-a</a></li>
+            <li><a href="api/times/serie-b" target="_blank">times/serie-b</a></li>
         </ul>
 
         {% for time in times %}
-            <span><a href="{% url 'jogadores:elenco' time.slug %}"><abbr title="{{time.nome}}"><img src="{{time.escudo}}" alt="{{time.nome}}"></abbr></a></span>
+            <span><a href="{% url 'jogadores:elenco' time.slug %}" target="_blank"><abbr title="{{time.nome}}"><img src="{{time.escudo}}" alt="{{time.nome}}"></abbr></a></span>
         {% endfor %}
     </body>
 

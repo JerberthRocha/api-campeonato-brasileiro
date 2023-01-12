@@ -11,7 +11,7 @@ class CampeonatoSerializer(serializers.ModelSerializer):
 class TimeSerializer(serializers.ModelSerializer):
     class Meta:
         model = Time
-        fields = ['nome']
+        fields = ['nome', 'escudo']
 
 
 class JogadorSerializer(serializers.ModelSerializer):
