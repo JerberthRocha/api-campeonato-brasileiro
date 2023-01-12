@@ -14,10 +14,6 @@
     --fonte: 'Noto Sans', sans-serif;
 }
 
-/* body {
-    max-width: 1200px;
-} */
-
 
 * {
     margin: 0px;
@@ -33,14 +29,14 @@ header {
 
 header h1{
     text-align: center;
-    padding: 15px;
-    font-size: 45px;
+    font-size: 40px;
     color: white;
 }
 
 header p{
     text-align: center;
     color: white;
+    padding-bottom: 50px;
 }
 
 li {
@@ -49,7 +45,7 @@ li {
     text-align: center;
 }
 
-div{
+ul > div{
     text-align: center;
 }
 
@@ -64,22 +60,18 @@ h3 {
     margin: 20px;
     margin-bottom: 30px;
     text-align: center;
-    /* font-size: 25px; */
 }
 
 section#serie-a {
     margin-left: 110px;
     margin-right: 110px;
     text-align: center;
-    /* margin: auto; */
 }
 
 section#serie-b {
     margin-left: 100px;
     margin-right: 100px;
-    margin-top: 60px;
     text-align: center;
-    /* margin: auto; */
 }
 
 span.serie-a {
@@ -89,9 +81,17 @@ span.serie-a {
 
 span.serie-b {
     margin: 30px;
-    margin-left: 31px;
+    margin-bottom: 50px;
+}
+
+span.serie-b img{
+    margin-bottom: 18px;
 }
 
 img {
     margin-bottom: 20px;
+}
+
+aside {
+    display: flex;
 }
