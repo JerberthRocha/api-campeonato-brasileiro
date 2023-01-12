@@ -60,4 +60,6 @@ class TimeDivisaoViewSet(APIView):
 
 
 def home(request):
-    return render(request, 'jogadores/pages/home.html')
+    times = Time.objects.all()
+    contexto = {'times': times}
+    return render(request, 'jogadores/pages/index.html', contexto)

@@ -12,6 +12,7 @@ class Campeonato(models.Model):
 class Time(models.Model):
     nome = models.CharField(max_length=40)
     divisao = models.ForeignKey(Campeonato, on_delete=models.DO_NOTHING, blank=True, null=True)
+    escudo = models.CharField(max_length=200, null=True)
     slug = models.SlugField(null=True)
 
     def __str__(self) -> str:
