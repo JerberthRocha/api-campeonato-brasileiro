@@ -17,11 +17,11 @@
             <h1>API</h1>
             <h1>Brasileirão</h1>
         </div>
-        <p>Dados sobre clubes e jogadores que participarão do campeonato brasileiro de futebol das séries A e B da temporada 2023</p>
+        <p>Dados sobre clubes e jogadores do campeonato brasileiro de futebol das séries A e B da temporada 2023</p>
     </header>
 
-        <body>
-            <ul class="ul-body">
+        <main>
+            <ul class="ul-main">
                 <div class="links-jogadores">
                     <li>
                         Todos os jogadores: 
@@ -106,13 +106,13 @@
                 </div>
             </ul>
 
-            <h2>Veja os elencos dos clubes</h2>
+            <h2>Veja os elencos</h2>
             <aside>
                 <section id="serie-a">
                     <h3>Brasileirão Série A</h3>
                     {% for time in times %}
                         {% if time.divisao.slug == 'serie-a' %}
-                            <span class="serie-a"><a href="{% url 'jogadores:elenco' time.slug %}?format=json" target="_blank"><abbr title="{{time.nome}}"><img class="serie-a" src="{{time.escudo}}" alt="{{time.nome}}"></abbr></a></span>
+                            <span class="serie-a"><a href="{% url 'jogadores:elenco' time.slug %}?format=json" target="_blank"><abbr title="Clique e veja o elenco do {{time.nome}}"><img class="serie-a" src="{{time.escudo}}" alt="{{time.nome}}"></abbr></a></span>
                         {% endif %}
                     {% endfor %}
                 </section>
@@ -120,12 +120,12 @@
                     <h3>Brasileirão Série B</h3>
                     {% for time in times %}
                         {% if time.divisao.slug == 'serie-b' %}
-                            <span class="serie-b" ><a href="{% url 'jogadores:elenco' time.slug %}?format=json" target="_blank"><abbr title="{{time.nome}}"><img src="{{time.escudo}}" alt="{{time.nome}}"></abbr></a></span>
+                            <span class="serie-b" ><a href="{% url 'jogadores:elenco' time.slug %}?format=json" target="_blank"><abbr title="Clique e veja o elenco do(a) {{time.nome}}"><img src="{{time.escudo}}" alt="{{time.nome}}"></abbr></a></span>
                         {% endif %}
                     {% endfor %}
                 </section>
             </aside>
-        </body>
+        </main>
 
     <footer>
         <div>Desenvolvido por Jerberth Rocha | 2023</div>

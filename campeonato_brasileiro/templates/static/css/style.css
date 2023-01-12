@@ -10,8 +10,8 @@
     --cor-4: #edc501;
     --cor-5: #F2F2F2;
 
-    --fonte: 'Lato', sans-serif;
     --fonte-principal: 'Noto Sans', sans-serif;
+    --fonte: 'Lato', sans-serif;
 }
 
 
@@ -36,21 +36,26 @@ header h1{
     font-size: 50px;
     line-height: 42px;
     color: white;
+    text-shadow: 0.8px 0.9px 1.2px rgba(0, 0, 0, 0.586);
 }
 
 header p{
     text-align: center;
+    font-size: 18px;
     color: white;
     padding: 20px;
+    text-shadow: 0.8px 0.9px 1.1px rgba(0, 0, 0, 0.450);
 }
 
  /* ############### CORPO ############### */
 
- body aside {
-    width: 100%;
-    margin-bottom: -50px;
-    border-bottom: 2px solid rgba(0, 0, 0, 0.85);
+ main {
+    min-width: 300px;
+    max-width: 1300px;
+    margin: auto;
+    padding-bottom: 50px;
  }
+
 
 div.links-times li {
     display: inline-block;
@@ -66,7 +71,7 @@ div.links-jogadores li {
     text-align: center;
 }
 
-ul.ul-body {
+ul.ul-main {
     padding-top: 30px;
 }
 
@@ -87,8 +92,8 @@ a:hover {
 }
 
 h2 {
-    margin: 40px;
-    margin-bottom: 60px;
+    margin-top: 50px;
+    margin-bottom: 20px;
     text-align: center;
     font-size: 25px;
 }
@@ -149,12 +154,12 @@ footer {
     padding-left: 40px;
     padding-right: 40px;
     min-height: 20px;
-    margin-top: 50px;
     background-color: var(--cor-1);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    border-top: 2px solid rgba(0, 0, 0, 0.85);
 }
 
 footer div {
