@@ -1,5 +1,14 @@
 @charset "UFT-8";
 
-body {
-    background-color: black;
+:root {
+    --cor1: #272B73
+    --cor2: #32378C
+    --cor3: #A68B03
+    --cor4: #D9B607
+    --cor5: #F2F2F2
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
 }

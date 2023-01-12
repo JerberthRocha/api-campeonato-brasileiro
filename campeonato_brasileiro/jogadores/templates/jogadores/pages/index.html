@@ -1,0 +1,38 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+    <link rel="shortcut icon" href="{% static 'img/favicon.ico'%}" type="image/x-icon">
+    <title>API Brasileirão</title>
+</head>
+<body>
+    <header>
+        <h1>API Brasileirão</h1>
+        <p>Esta API lista todos os jogadores e todos os clubes que participarão do campeonato brasileiro de futebol séries A e B da temporada 2023.</p>
+    </header>
+
+    <body>
+        <ul>
+            <li><a href="jogadores" target="_blank">jogadores</a></li>
+            <li><a href="jogadores/serie-a" target="_blank">jogadores/serie-a</a></li>
+            <li><a href="jogadores/serie-b" target="_blank">jogadores/serie-b</a></li>
+            <li><a href="times" target="_blank">times</a></li>
+            <li><a href="times/serie-a" target="_blank">times/serie-a</a></li>
+            <li><a href="times/serie-b" target="_blank">times/serie-b</a></li>
+        </ul>
+
+        {% for time in times %}
+            <span><a href="{% url 'jogadores:elenco' time.slug %}"><abbr title="{{time.nome}}"><img src="{{time.escudo}}" alt="{{time.nome}}"></abbr></a></span>
+        {% endfor %}
+    </body>
+
+    <footer>
+        <span>Desenvolvido por <a href="https://github.com/JerberthRocha" target="_blank">Jerberth Rocha </a>2023</span>
+    </footer>
+</body>
+</html>
