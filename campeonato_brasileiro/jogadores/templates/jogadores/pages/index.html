@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/style.css'%}">
     <link rel="shortcut icon" href="{% static 'img/favicon.ico'%}" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
     <title>API Brasileirão</title>
 </head>
 <body>
@@ -21,16 +22,88 @@
 
     <main>
         <body>
-            <ul>
+            <ul class="ul-body">
                 <div class="links-jogadores">
-                    <li>Todos os jogadores: <a href="api/jogadores" target="_blank">jogadores</a></li>
-                    <li>Todos os jogadores da série A: <a href="api/jogadores/serie-a" target="_blank">jogadores/serie-a</a></li>
-                    <li>Todos os jogadores da série B: <a href="api/jogadores/serie-b" target="_blank">jogadores/serie-b</a></li>
+                    <li>
+                        Todos os jogadores: 
+                        <a href="api/jogadores?format=json" target="_blank">
+                            jogadores
+                            <svg style="display: inline-block; width: 0.6em; height: 0.6em;" viewbox="0
+                                0 48 48">
+                                <path d="M43.8 5.2c-0.2-0.4-0.6-0.8-1-1-0.2-0.2-0.6-0.2-0.8-0.2h-12c-1.2
+                                0-2 0.8-2 2s0.8 2 2 2h7.2l-18.6 18.6c-0.8 0.8-0.8 2 0 2.8 0.4 0.4 0.8
+                                0.6 1.4 0.6s1-0.2 1.4-0.6l18.6-18.6v7.2c0 1.2 0.8 2 2 2s2-0.8
+                                2-2v-12c0-0.2 0-0.6-0.2-0.8z"></path>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        Todos os jogadores da série A: 
+                        <a href="api/jogadores/serie-a?format=json" target="_blank">
+                            jogadores/serie-a
+                            <svg style="display: inline-block; width: 0.6em; height: 0.6em;" viewbox="0
+                                0 48 48">
+                                <path d="M43.8 5.2c-0.2-0.4-0.6-0.8-1-1-0.2-0.2-0.6-0.2-0.8-0.2h-12c-1.2
+                                0-2 0.8-2 2s0.8 2 2 2h7.2l-18.6 18.6c-0.8 0.8-0.8 2 0 2.8 0.4 0.4 0.8
+                                0.6 1.4 0.6s1-0.2 1.4-0.6l18.6-18.6v7.2c0 1.2 0.8 2 2 2s2-0.8
+                                2-2v-12c0-0.2 0-0.6-0.2-0.8z"></path>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        Todos os jogadores da série B: 
+                        <a href="api/jogadores/serie-b?format=json" target="_blank">
+                            jogadores/serie-b
+                            <svg style="display: inline-block; width: 0.6em; height: 0.6em;" viewbox="0
+                                0 48 48">
+                                <path d="M43.8 5.2c-0.2-0.4-0.6-0.8-1-1-0.2-0.2-0.6-0.2-0.8-0.2h-12c-1.2
+                                0-2 0.8-2 2s0.8 2 2 2h7.2l-18.6 18.6c-0.8 0.8-0.8 2 0 2.8 0.4 0.4 0.8
+                                0.6 1.4 0.6s1-0.2 1.4-0.6l18.6-18.6v7.2c0 1.2 0.8 2 2 2s2-0.8
+                                2-2v-12c0-0.2 0-0.6-0.2-0.8z"></path>
+                            </svg>
+                        </a>
+                    </li>
                 </div>
                 <div class="links-times">
-                    <li>Todos os times: <a href="api/times" target="_blank">times</a></li>
-                    <li>Todos os times da série A: <a href="api/times/serie-a" target="_blank">times/serie-a</a></li>
-                    <li>Todos os times da série B: <a href="api/times/serie-b" target="_blank">times/serie-b</a></li>
+                    <li>
+                        Todos os times: 
+                        <a href="api/times?format=json" target="_blank">
+                            times
+                            <svg style="display: inline-block; width: 0.6em; height: 0.6em;" viewbox="0
+                                0 48 48">
+                                <path d="M43.8 5.2c-0.2-0.4-0.6-0.8-1-1-0.2-0.2-0.6-0.2-0.8-0.2h-12c-1.2
+                                0-2 0.8-2 2s0.8 2 2 2h7.2l-18.6 18.6c-0.8 0.8-0.8 2 0 2.8 0.4 0.4 0.8
+                                0.6 1.4 0.6s1-0.2 1.4-0.6l18.6-18.6v7.2c0 1.2 0.8 2 2 2s2-0.8
+                                2-2v-12c0-0.2 0-0.6-0.2-0.8z"></path>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        Todos os times da série A: 
+                        <a href="api/times/serie-a?format=json" target="_blank">
+                            times/serie-a
+                            <svg style="display: inline-block; width: 0.6em; height: 0.6em;" viewbox="0
+                                0 48 48">
+                                <path d="M43.8 5.2c-0.2-0.4-0.6-0.8-1-1-0.2-0.2-0.6-0.2-0.8-0.2h-12c-1.2
+                                0-2 0.8-2 2s0.8 2 2 2h7.2l-18.6 18.6c-0.8 0.8-0.8 2 0 2.8 0.4 0.4 0.8
+                                0.6 1.4 0.6s1-0.2 1.4-0.6l18.6-18.6v7.2c0 1.2 0.8 2 2 2s2-0.8
+                                2-2v-12c0-0.2 0-0.6-0.2-0.8z"></path>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        Todos os times da série B: 
+                        <a href="api/times/serie-b?format=json" target="_blank">
+                            times/serie-b
+                            <svg style="display: inline-block; width: 0.6em; height: 0.6em;" viewbox="0
+                                0 48 48">
+                                <path d="M43.8 5.2c-0.2-0.4-0.6-0.8-1-1-0.2-0.2-0.6-0.2-0.8-0.2h-12c-1.2
+                                0-2 0.8-2 2s0.8 2 2 2h7.2l-18.6 18.6c-0.8 0.8-0.8 2 0 2.8 0.4 0.4 0.8
+                                0.6 1.4 0.6s1-0.2 1.4-0.6l18.6-18.6v7.2c0 1.2 0.8 2 2 2s2-0.8
+                                2-2v-12c0-0.2 0-0.6-0.2-0.8z"></path>
+                            </svg>
+                        </a>
+                    </li>
                 </div>
             </ul>
 
@@ -40,7 +113,7 @@
                     <h3>Brasileirão Série A</h3>
                     {% for time in times %}
                         {% if time.divisao.slug == 'serie-a' %}
-                            <span class="serie-a"><a href="{% url 'jogadores:elenco' time.slug %}" target="_blank"><abbr title="{{time.nome}}"><img src="{{time.escudo}}" alt="{{time.nome}}"></abbr></a></span>
+                            <span class="serie-a"><a href="{% url 'jogadores:elenco' time.slug %}?format=json" target="_blank"><abbr title="{{time.nome}}"><img class="serie-a" src="{{time.escudo}}" alt="{{time.nome}}"></abbr></a></span>
                         {% endif %}
                     {% endfor %}
                 </section>
@@ -48,7 +121,7 @@
                     <h3>Brasileirão Série B</h3>
                     {% for time in times %}
                         {% if time.divisao.slug == 'serie-b' %}
-                            <span class="serie-b" ><a href="{% url 'jogadores:elenco' time.slug %}" target="_blank"><abbr title="{{time.nome}}"><img src="{{time.escudo}}" alt="{{time.nome}}"></abbr></a></span>
+                            <span class="serie-b" ><a href="{% url 'jogadores:elenco' time.slug %}?format=json" target="_blank"><abbr title="{{time.nome}}"><img src="{{time.escudo}}" alt="{{time.nome}}"></abbr></a></span>
                         {% endif %}
                     {% endfor %}
                 </section>
@@ -57,7 +130,11 @@
     </main>
 
     <footer>
-        <span>Desenvolvido por <a href="https://github.com/JerberthRocha" target="_blank">Jerberth Rocha </a>2023</span>
+        <div>Desenvolvido por Jerberth Rocha | 2023</div>
+        <ul>
+            <a href="https://github.com/JerberthRocha" target="_blank"><li><img width="30px" height="30px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg"/></li></a>
+            <a href="https://www.linkedin.com/in/jerberth-rocha/" target="_blank"><li><img width="30px" height="30px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-plain.svg" /></li></a>
+        </ul>
     </footer>
 </body>
 </html>
