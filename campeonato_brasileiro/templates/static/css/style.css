@@ -46,6 +46,12 @@ header p{
 
  /* ############### CORPO ############### */
 
+ body aside {
+    width: 100%;
+    margin-bottom: -50px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.85);
+ }
+
 div.links-times li {
     display: inline-block;
     margin: 20px;
