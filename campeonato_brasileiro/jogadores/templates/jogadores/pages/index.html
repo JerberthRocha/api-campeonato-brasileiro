@@ -13,23 +13,44 @@
 <body>
     <header>
         <h1>API Brasileirão</h1>
-        <p>Esta API lista todos os jogadores e todos os clubes que participarão do campeonato brasileiro de futebol séries A e B da temporada 2023.</p>
+        <p>Esta API lista todos os jogadores e todos os clubes que participarão do campeonato brasileiro de futebol séries A e B da temporada 2023</p>
     </header>
 
-    <body>
-        <ul>
-            <li><a href="api/jogadores" target="_blank">jogadores</a></li>
-            <li><a href="api/jogadores/serie-a" target="_blank">jogadores/serie-a</a></li>
-            <li><a href="api/jogadores/serie-b" target="_blank">jogadores/serie-b</a></li>
-            <li><a href="api/times" target="_blank">times</a></li>
-            <li><a href="api/times/serie-a" target="_blank">times/serie-a</a></li>
-            <li><a href="api/times/serie-b" target="_blank">times/serie-b</a></li>
-        </ul>
+    <main>
+        <body>
+            <ul>
+                <div class="links-jogadores">
+                    <li>Todos os jogadores: <a href="api/jogadores" target="_blank">jogadores</a></li>
+                    <li>Todos os jogadores da série A: <a href="api/jogadores/serie-a" target="_blank">jogadores/serie-a</a></li>
+                    <li>Todos os jogadores da série B: <a href="api/jogadores/serie-b" target="_blank">jogadores/serie-b</a></li>
+                </div>
+                <div class="links-times">
+                    <li>Todos os times: <a href="api/times" target="_blank">times</a></li>
+                    <li>Todos os times da série A: <a href="api/times/serie-a" target="_blank">times/serie-a</a></li>
+                    <li>Todos os times da série B: <a href="api/times/serie-b" target="_blank">times/serie-b</a></li>
+                </div>
+            </ul>
 
-        {% for time in times %}
-            <span><a href="{% url 'jogadores:elenco' time.slug %}" target="_blank"><abbr title="{{time.nome}}"><img src="{{time.escudo}}" alt="{{time.nome}}"></abbr></a></span>
-        {% endfor %}
-    </body>
+            <h2>Veja os elencos dos clubes</h2>
+            <section id="serie-a">
+                <h3>Brasileirão Série A</h3>
+                {% for time in times %}
+                    {% if time.divisao.slug == 'serie-a' %}
+                        <span class="serie-a"><a href="{% url 'jogadores:elenco' time.slug %}" target="_blank"><abbr title="{{time.nome}}"><img src="{{time.escudo}}" alt="{{time.nome}}"></abbr></a></span>
+                    {% endif %}
+                {% endfor %}
+            </section>
+        
+            <section id="serie-b">
+                <h3>Brasileirão Série B</h3>
+                {% for time in times %}
+                    {% if time.divisao.slug == 'serie-b' %}
+                        <span class="serie-b" ><a href="{% url 'jogadores:elenco' time.slug %}" target="_blank"><abbr title="{{time.nome}}"><img src="{{time.escudo}}" alt="{{time.nome}}"></abbr></a></span>
+                    {% endif %}
+                {% endfor %}
+            </section>
+        </body>
+    </main>
 
     <footer>
         <span>Desenvolvido por <a href="https://github.com/JerberthRocha" target="_blank">Jerberth Rocha </a>2023</span>
