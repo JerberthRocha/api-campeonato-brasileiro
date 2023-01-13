@@ -10,8 +10,8 @@ router.register('jogadores', JogadorViewSet),
 router.register('times', TimeViewSet), 
 
 urlpatterns = [
-    path('home', home, name='home'),
-    path('elenco/<str:time>', ElencoViewSet.as_view(), name='elenco'),
-    path('jogadores/<str:divisao>', DivisaoViewSet.as_view(), name='divisao'),
-    path('times/<str:campeonato>', TimeDivisaoViewSet.as_view(), name='campeonato'),
+    path('', home, name='home'),
+    path('api/elenco/<str:time>', ElencoViewSet.as_view(), name='elenco'),
+    path('api/jogadores/<str:divisao>', DivisaoViewSet.as_view(), name='divisao'),
+    path('api/times/<str:campeonato>', TimeDivisaoViewSet.as_view(), name='campeonato'),
 ]

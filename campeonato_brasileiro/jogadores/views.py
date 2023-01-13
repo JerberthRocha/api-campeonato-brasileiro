@@ -60,6 +60,6 @@ class TimeDivisaoViewSet(APIView):
 
 
 def home(request):
-    times = Time.objects.all()
+    times = Time.objects.order_by('nome').select_related('divisao')
     contexto = {'times': times}
     return render(request, 'jogadores/pages/index.html', contexto)

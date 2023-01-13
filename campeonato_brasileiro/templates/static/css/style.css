@@ -1,14 +1,271 @@
 @charset "UFT-8";
 
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500&display=swap');
+
 :root {
-    --cor1: #272B73
-    --cor2: #32378C
-    --cor3: #A68B03
-    --cor4: #D9B607
-    --cor5: #F2F2F2
+    --cor-1: #424ae2;
+    --cor-2: #004BA8;
+    --cor-3: rgb(229, 229, 28);
+    --cor-4: #edc501;
+    --cor-5: #F2F2F2;
+
+    --fonte-principal: 'Noto Sans', sans-serif;
+    --fonte: 'Lato', sans-serif;
 }
+
 
 * {
     margin: 0px;
-    padding: 0px;
+    padding: 0px;   
+    font-family: var(--fonte-principal);
+}
+
+/* ############### CABEÇALHO ############### */
+
+header {
+    background: linear-gradient(to top, var(--cor-1), var(--cor-2));
+    min-height: 150px;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.300);
+}
+
+header h1{
+    text-align: center;
+    font-size: 50px;
+    line-height: 42px;
+    color: white;
+    text-shadow: 0.8px 0.9px 1.2px rgba(0, 0, 0, 0.586);
+}
+
+header p{
+    text-align: center;
+    font-size: 18px;
+    color: white;
+    padding: 20px;
+    text-shadow: 0.8px 0.9px 1.1px rgba(0, 0, 0, 0.450);
+}
+
+ /* ############### CORPO ############### */
+
+ main {
+    /* min-width: 300px;
+    max-width: 1300px; */
+    margin: auto;
+    padding-bottom: 50px;
+ }
+
+
+div.links-times li {
+    display: inline-block;
+    margin: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+div.links-jogadores li {
+    display: inline-block;
+    margin: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+ul.ul-main {
+    padding-top: 30px;
+}
+
+ul > div{
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    font-weight: 500;
+    color: black;
+}
+
+a:hover {
+    text-decoration: underline;
+    font-weight: bold;
+    color: var(--cor-2);
+}
+
+h2 {
+    margin-top: 50px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 25px;
+}
+
+h3 {
+    margin: 20px;
+    margin-bottom: 30px;
+    text-align: center; 
+}
+
+aside {
+    display: flex;
+}
+
+section span img{
+    width: 40px;
+    box-sizing: border-box;
+}
+
+section span img:hover{
+    border: 1px solid white;
+}
+
+section#serie-a {
+    margin-left: 50px;
+    margin-right: 50px;
+    text-align: center;
+    /* max-width: 500px;
+    margin: auto; */
+}
+section#serie-b {
+    margin-left: 50px;
+    margin-right: 50px;
+    text-align: center;
+    /* max-width: 500px;
+    margin: auto; */
+}
+
+span.serie-a {
+    margin: 30px;
+   
+}
+
+span.serie-b {
+    margin: 27px;
+}
+
+span.serie-b img{
+    margin-bottom: 16px;
+}
+
+img.serie-a {
+    margin-bottom: 20px;
+}
+
+
+/* ############### RODAPÉ ############### */
+
+footer {
+    padding: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+    min-height: 20px;
+    background-color: var(--cor-1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 2px solid rgba(0, 0, 0, 0.85);
+}
+
+footer div {
+    color: black;
+    font-weight: bold;
+}
+
+footer li {
+    padding-top: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+    list-style-type: none;
+    display: inline-block;
+}
+
+footer ul img{
+    box-sizing: border-box;
+}
+
+footer ul img:hover{
+    border: 1px solid var(--cor-1);
+}
+
+
+/* ############### MEDIA QUERIES ############### */
+
+@media (max-width: 1024px){
+    /* main {
+        background-color: rgba(255, 0, 0, 0.331);
+    } */
+    
+    aside {
+        max-width: 600px;
+        margin: auto;
+        display: block;
+    }
+
+    section#serie-b {
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+
+}
+
+@media (max-width: 768px){
+    /* main {
+        background-color: rebeccapurple;
+    } */
+
+    span.serie-a {
+        margin: 26px;
+       
+    }
+
+    span.serie-b {
+        margin: 26px;
+       
+    }
+    
+    section#serie-b {
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+}
+
+@media (max-width: 480px){
+    /* main {
+        background-color: blue;
+    } */
+
+    header {
+        min-height: 100px;
+    }
+
+    header p {
+        display: none;
+    }
+
+    section#serie-a {
+        margin-left: 20px;
+        margin-right: 20px;
+        text-align: center;
+    }
+
+    section#serie-b {
+        margin-left: 20px;
+        margin-right: 20px;
+        text-align: center;
+    }
+    
+    section#serie-a h3 {
+        padding-top: 15px;
+    }
+
+    span.serie-a {
+        margin: 15px;
+    }
+
+    span.serie-b {
+        margin: 15px;
+    }
+
+    footer div {
+        font-size: 15px;
+    }
 }
