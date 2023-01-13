@@ -50,8 +50,8 @@ header p{
  /* ############### CORPO ############### */
 
  main {
-    min-width: 300px;
-    max-width: 1300px;
+    /* min-width: 300px;
+    max-width: 1300px; */
     margin: auto;
     padding-bottom: 50px;
  }
@@ -101,7 +101,7 @@ h2 {
 h3 {
     margin: 20px;
     margin-bottom: 30px;
-    text-align: center;
+    text-align: center; 
 }
 
 aside {
@@ -118,15 +118,18 @@ section span img:hover{
 }
 
 section#serie-a {
-    margin-left: 100px;
-    margin-right: 10px;
+    margin-left: 50px;
+    margin-right: 50px;
     text-align: center;
+    /* max-width: 500px;
+    margin: auto; */
 }
-
 section#serie-b {
-    margin-left: 100px;
-    margin-right: 100px;
+    margin-left: 50px;
+    margin-right: 50px;
     text-align: center;
+    /* max-width: 500px;
+    margin: auto; */
 }
 
 span.serie-a {
@@ -135,11 +138,11 @@ span.serie-a {
 }
 
 span.serie-b {
-    margin: 30px;
+    margin: 27px;
 }
 
 span.serie-b img{
-    margin-bottom: 20px;
+    margin-bottom: 16px;
 }
 
 img.serie-a {
@@ -181,4 +184,88 @@ footer ul img{
 
 footer ul img:hover{
     border: 1px solid var(--cor-1);
+}
+
+
+/* ############### MEDIA QUERIES ############### */
+
+@media (max-width: 1024px){
+    /* main {
+        background-color: rgba(255, 0, 0, 0.331);
+    } */
+    
+    aside {
+        max-width: 600px;
+        margin: auto;
+        display: block;
+    }
+
+    section#serie-b {
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+
+}
+
+@media (max-width: 768px){
+    /* main {
+        background-color: rebeccapurple;
+    } */
+
+    span.serie-a {
+        margin: 26px;
+       
+    }
+
+    span.serie-b {
+        margin: 26px;
+       
+    }
+    
+    section#serie-b {
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+}
+
+@media (max-width: 480px){
+    /* main {
+        background-color: blue;
+    } */
+
+    header {
+        min-height: 100px;
+    }
+
+    header p {
+        display: none;
+    }
+
+    section#serie-a {
+        margin-left: 20px;
+        margin-right: 20px;
+        text-align: center;
+    }
+
+    section#serie-b {
+        margin-left: 20px;
+        margin-right: 20px;
+        text-align: center;
+    }
+    
+    section#serie-a h3 {
+        padding-top: 15px;
+    }
+
+    span.serie-a {
+        margin: 15px;
+    }
+
+    span.serie-b {
+        margin: 15px;
+    }
+
+    footer div {
+        font-size: 15px;
+    }
 }
