@@ -50,8 +50,8 @@ header p{
  /* ############### CORPO ############### */
 
  main {
-    /* min-width: 300px;
-    max-width: 1300px; */
+    min-width: 300px;
+    max-width: 1300px;
     margin: auto;
     padding-bottom: 50px;
  }  
