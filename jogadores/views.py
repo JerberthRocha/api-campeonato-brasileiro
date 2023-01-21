@@ -52,7 +52,6 @@ class TimeDivisaoViewSet(APIView):
     """Mostra todos os atletas que jogam na divisão informada por parâmetro"""
     def get(self, request, **kwargs):
         parametro = slugify(str(*kwargs.values()))
-        print(parametro)
         divisao = Time.objects.filter(divisao__slug=parametro).select_related('divisao')
 
         serializer = TimeSerializer(divisao, many=True)
