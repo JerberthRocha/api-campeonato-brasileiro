@@ -44,12 +44,20 @@ header p{
     text-shadow: 0.8px 0.9px 1.1px rgba(0, 0, 0, 0.450);
 }
 
- main {
+/*  main {
     min-width: 300px;
     max-width: 1300px;
     margin: auto;
     padding-bottom: 50px;
- }  
+ }  */
+
+main {
+    min-width: 300px;
+    max-width: 1300px;
+    margin: auto;
+    padding-bottom: 50px;
+    height: calc(100vh - 317px);
+}
 
 main ul {
     display: flex;
